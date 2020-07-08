@@ -90,7 +90,7 @@ class _SearchBarState extends State<SearchBar> {
       child: Row(children: <Widget>[
         _wrapTap(
             Container(
-                padding: EdgeInsets.fromLTRB(6, 5, 5, 5),
+                padding: EdgeInsets.fromLTRB(6, 15, 5, 5),
                 child: Row(
                   children: <Widget>[
                     Text(
@@ -111,7 +111,7 @@ class _SearchBarState extends State<SearchBar> {
         ),
         _wrapTap(
             Container(
-              padding: EdgeInsets.fromLTRB(10, 5, 10, 5),
+              padding: EdgeInsets.fromLTRB(10, 15, 10, 5),
               child: Icon(
                 Icons.comment,
                 color: _homeFontColor(),
@@ -131,7 +131,8 @@ class _SearchBarState extends State<SearchBar> {
       inputBoxColor = Color(int.parse('0xffEDEDED'));
     }
     return Container(
-      height: 30,
+      height: 40,
+      margin: EdgeInsets.only(top: 15),
       padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
       decoration: BoxDecoration(
           color: inputBoxColor,
@@ -159,7 +160,6 @@ class _SearchBarState extends State<SearchBar> {
                           fontWeight: FontWeight.w300),
                       //输入文本的样式
                       decoration: InputDecoration(
-                        contentPadding: EdgeInsets.fromLTRB(5, 0, 5, 0),
                         border: InputBorder.none,
                         hintText: widget.hint ?? '',
                         hintStyle: TextStyle(fontSize: 15),
@@ -168,7 +168,10 @@ class _SearchBarState extends State<SearchBar> {
                       Container(
                         child: Text(
                           widget.defaultText,
-                          style: TextStyle(fontSize: 13, color: Colors.grey),
+                          style: TextStyle(
+                            fontSize: 13,
+                            color: Colors.grey,
+                          ),
                         ),
                       ),
                       widget.inputBoxClick)),
